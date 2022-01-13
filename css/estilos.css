@@ -36,6 +36,15 @@ header{
     margin: 0.5rem;
 }
 
+
+a{
+    text-decoration: none;
+}
+
+ h1:hover {
+    color: black;
+}
+
 .nav
 {
     grid-area: nav;
@@ -53,14 +62,40 @@ nav ul li{
     font-size: 1.2rem;    
     font-weight: 600;
 }
+
 nav ul li a{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #c87d5d;
     text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    position: relative;
 }
 
 nav ul li a:hover{
     color: #a7684d;
 }
+
+/*Animaciones NAV*/
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #a7684d;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 
 .linkActive{
     color: #a7684d;
@@ -134,16 +169,49 @@ section p{
     background-color: #87AAAA;
 }
 
-.contenedorFlex{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content:space-around;
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    width: 60%;
+    height: 40%;
+    margin: 2rem auto;
 }
-
-.contenedorFlex img{
-    width: 25vw;
-    height: 30vh;
+.grid__container__img{
+    width: 100%;
+}
+/*Animación Grid*/
+.overlay{
+    height: 100%;
+    background-color: #eb9a77;
+    opacity: 0;
+    transform: translate(0%, -100%);
+    transition: .5s ease;
+    z-index: 1;
+    position: relative;
+}
+.grid__container:hover .overlay {
+    opacity: 1;
+} 
+.overlay__title{
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.overlay__description{
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 form{
