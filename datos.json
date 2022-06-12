@@ -1,0 +1,6 @@
+[
+    { "id": 1, "descripcion": "CAFE", "precio": 150 },
+    { "id": 2, "descripcion": "CAPUCCINO", "precio": 200 },
+    { "id": 3, "descripcion": "CHOCOLATE", "precio": 180 },
+    { "id": 4, "descripcion": "TE", "precio": 100 }
+]
